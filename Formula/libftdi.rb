@@ -23,7 +23,8 @@ class Libftdi < Formula
 
   def install
     mkdir "libftdi-build" do
-      system "cmake", "..", "-DPYTHON_EXECUTABLE=/Users/jjs/.pyenv/versions/3.7.0/bin/python", "-DPYTHON_INCLUDE_DIR=/Users/jjs/.pyenv/versions/3.7.0/include/python3.7m", "-DPYTHON_LIBRARY=/Users/jjs/.pyenv/versions/3.7.0/lib/libpython3.7m.a", *std_cmake_args
+      #system "cmake", "..", "-DPYTHON_EXECUTABLE=/Users/jjs/.pyenv/versions/3.7.0/bin/python", "-DPYTHON_INCLUDE_DIR=/Users/jjs/.pyenv/versions/3.7.0/include/python3.7m", "-DPYTHON_LIBRARY=/Users/jjs/.pyenv/versions/3.7.0/lib/libpython3.7m.a", *std_cmake_args
+      system "cmake", "..", *std_cmake_args
       system "make", "install"
       (libexec/"bin").install "examples/find_all"
     end
